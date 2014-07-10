@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2014 Personal-Health-Monitoring-System
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~ 	http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+    <color name="default_color">#ffffff</color>
+    <color name="slide_menu_background">#fff</color>
+    <color name="slide_menu_text">#777777</color>
+    <color name="slide_menu_header_background">@drawable/gray_stripe_pattern</color>
+    <color name="slide_menu_header_text">#fff</color>
+    <color name="my_app_green">@color/green</color>
+    <color name="light_gray">#C1BCBA</color>
+    <color name="gray">#ff565656</color>
+
+    <color name="card_title">#2a84a5</color>
+
+    <!-- Card Color -->
+    <color name="card_background">#FFF</color>
+    <color name="card_background_header">#FFF</color>
+    <color name="card_backgroundExpand">#515254</color>
+
+    <color name="card_text_color_header">#000</color>
+    <color name="card_expand_title_color">#B3B2B2</color>
+
+    <!-- Used by selector -->
+    <color name="card_pressed">#7E0099CC</color>
+    <color name="card_activated">#CFE9F3</color>
+
+    <color name="card_pressed_kitkat">#10000000</color>
+    <color name="card_activated_kitkat">#ADE1F4</color>
+
+    <!-- color card -->
+    <color name="light_orange">#FFBB33</color>
+    <color name="orange">#FF8800</color>
+    <color name="green">#669900</color>
+    <color name="light_green">#99CC00</color>
+    <color name="light_purple">#A966CC</color>
+    <color name="light_blue">#33B4E4</color>
+    <color name="red">#FF4343</color>
+    <color name="dark_red">#A11143</color>
+
+    <!-- Purchase -->
+    <color name="demo_extras_purchase_normal">#ececec</color>
+    <color name="demo_extras_purchase_pressed">#CCDF9F51</color>
+
+    <color name="demoextra_sticky_header_normal">#ffe74c3c</color>
+    <color name="demoextra_sticky_header_pressed">#ffc0392b</color>
+
+    <!-- Staggered-->
+    <color name="demo_card_staggered_subtitle">#66000000</color>
+
+    <color name="transparent">@android:color/transparent</color>
+</resources>
