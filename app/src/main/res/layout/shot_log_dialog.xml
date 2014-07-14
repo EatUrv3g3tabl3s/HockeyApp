@@ -27,15 +27,14 @@
               android:paddingBottom="12dp">
 
     <com.andreabaccega.widget.FormEditText
-            android:id="@+id/weight_log_dialog_et"
-            validate:testType="numeric"
+            android:id="@+id/shot_log_dialog_et"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:saveEnabled="false"
-            android:inputType="numberDecimal"
+            android:inputType="number"
             android:gravity="right"
             android:layout_weight="0.50"
-            />
+            /><!--validate:testType="numeric"-->
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -1,8 +1,24 @@
-apply plugin: 'com.android.application'
+//apply plugin: 'com.android.application'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.12.+'
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.1'
+    }
+}
+apply plugin: 'android'
+apply plugin: 'android-apt'
+
+repositories {
+    mavenCentral()
+}
 
 android {
     compileSdkVersion 19
-    buildToolsVersion "19.1.0"
+    buildToolsVersion '19.1.0'
 
     defaultConfig {
         applicationId "com.hockey.hockeyapp"
@@ -17,9 +33,27 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
 }
+
+apt {
+    arguments {
+        androidManifestFile variant.processResources.manifestFile
+        resourcePackageName 'com.hockey.hockeyapp'
+        logLevel 'INFO'
+    }
+}
+
+def AAVersion = '3.0.1'
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    apt "org.androidannotations:androidannotations:$AAVersion"
+    compile files('libs/com.actionbarsherlock/actionbarsherlock/4.4.0/classes.jar')
+    compile files('libs/com.andreabaccega/android-form-edittext/1.0.5/classes.jar')
+    compile files('libs/com.github.itsmechlark/android-times-square/1.1.1/classes.jar')
+    compile files('libs/GraphView-3.1.1.jar')
+    compile files('libs/androidannotations-bundle-3.0.1/androidannotations-3.0.1.jar')
     compile 'com.android.support:support-v4:19.+'
+
 }
