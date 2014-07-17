@@ -73,12 +73,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
     //Getting single shot type
-    public ShotLog getShotLog(int id)
+    public ShotLog getShotLog(String shotType)
     {
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = db.query(TABLE_SHOTLOG, new String[] { KEY_SHOTTYPE, KEY_SHOTCOUNT},
-                KEY_SHOTTYPE + "=?", new String[]{String.valueOf(id) }, null, null, null,null);
+                KEY_SHOTTYPE + "=?", new String[]{String.valueOf(shotType) }, null, null, null,null);
 
         if (cursor != null)
         {
@@ -117,8 +117,15 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return shotLogList;
     }
 
-    public int updateShotLog(ShotLog shotLog)
+    public void updateShotLog(ShotLog shotLog)
     {
-            return 0;
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(KEY_SHOTCOUNT, shotLog.get_shotCount());
+
+        db.update(TABLE_SHOTLOG, values, KEY_SHOTTYPE + " =?", new String[]{shotLog.get_shotType()});
+
     }
+
 }

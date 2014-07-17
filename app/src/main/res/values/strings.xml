@@ -29,4 +29,12 @@
     <string name="title_activity_main">HockeyApp</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+
+    <string-array name="shotType">
+        <item>Wrist</item>
+        <item>Snap</item>
+        <item>Slap</item>
+        <item>Backhand</item>
+    </string-array>
+
 </resources>

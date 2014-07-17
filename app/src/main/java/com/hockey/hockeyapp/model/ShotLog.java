@@ -1,5 +1,7 @@
 package com.hockey.hockeyapp.model;
 
+import java.util.Calendar;
+
 /**
  * Created by Owner on 7/10/2014.
  */
@@ -14,6 +16,8 @@ public class ShotLog {
   //  @Column(name = "ShotCount")
     private int _shotCount;
 
+    private long time;
+
 
     public ShotLog()
     {
@@ -25,6 +29,7 @@ public class ShotLog {
 
         this._shotType = shotType;
         this._shotCount = shotCount;
+        this.time = Calendar.getInstance().getTimeInMillis();
 
     }
 

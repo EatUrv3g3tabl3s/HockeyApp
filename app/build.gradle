@@ -56,4 +56,5 @@ dependencies {
     compile files('libs/androidannotations-bundle-3.0.1/androidannotations-3.0.1.jar')
     compile 'com.android.support:support-v4:19.+'
     compile files('libs/ActiveAndroid.jar')
+    compile files('libs/achartengine-1.1.0.jar')
 }
