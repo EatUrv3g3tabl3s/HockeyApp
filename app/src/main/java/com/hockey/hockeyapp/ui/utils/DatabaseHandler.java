@@ -121,6 +121,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     {
         SQLiteDatabase db = this.getWritableDatabase();
 
+
         ContentValues values = new ContentValues();
         values.put(KEY_SHOTCOUNT, shotLog.get_shotCount());
 

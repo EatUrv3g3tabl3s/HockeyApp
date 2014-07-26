@@ -32,6 +32,7 @@ import org.achartengine.renderer.DefaultRenderer;
 import org.achartengine.renderer.SimpleSeriesRenderer;
 import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EFragment;
+import org.w3c.dom.Text;
 
 import java.math.BigDecimal;
 import java.math.MathContext;
@@ -52,6 +53,7 @@ public class ShotCounterFragment extends Fragment {
 
     private DatabaseHandler db;
     private TextView recordLog;
+    private TextView resetLog;
 
     private static int[] COLORS = new int[]{Color.GREEN, Color.BLUE,Color.MAGENTA, Color.RED };
     private int shotValues;
@@ -81,11 +83,18 @@ public class ShotCounterFragment extends Fragment {
         final View rootView = inflater.inflate(R.layout.shot_log_screen,container, false);
 
         recordLog = (TextView) rootView.findViewById(R.id.shot_log_screen_log_btn);
-
         recordLog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                onClickLogBtn(rootView);
+            }
+        });
+
+        resetLog = (TextView) rootView.findViewById(R.id.reset_count_btn);
+        resetLog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onClickResetBtn(rootView);
             }
         });
 
@@ -140,14 +149,15 @@ public class ShotCounterFragment extends Fragment {
                         if (isValid[0]) {
                             int count = Integer.parseInt(formEditText.getText().toString());
 
-                           // String shotType = (String)spinner.getSelectedItem();
-                            ShotLog wristUpdate = new ShotLog(shotType[0], count);
-                            ShotLog snapUpdate = new ShotLog("Snap", 20);
-                            System.out.println(shotType[0] + shotType[0].length());
+                            String shotType = (String)spinner.getSelectedItem();
+                            ShotLog shotUpdate = new ShotLog(shotType, count);
 
+                            int prev = db.getShotLog(shotType).get_shotCount();
+                            int sum = prev + count;
+                            shotUpdate.set_shotCount(sum);
 
-                            db.updateShotLog(wristUpdate);
-                            db.updateShotLog(snapUpdate);
+                            db.updateShotLog(shotUpdate);
+
                             setupStatsView(rootView);
                             updateGraph();
                             dialog.dismiss();
@@ -170,6 +180,49 @@ public class ShotCounterFragment extends Fragment {
 
     }
 
+
+    public void onClickResetBtn(final View rootView)
+    {
+        final AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity());
+
+        alertDialog.setTitle("Confirm Reset...");
+
+        alertDialog.setMessage("Are you sure you want to reset all shot counters to zero?");
+
+        //alertDialog.setIcon();  if want icon later
+
+        alertDialog.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                //Code here to invoke YES event
+                Toast.makeText(getActivity(), "All counters reset to 0", Toast.LENGTH_SHORT).show();
+
+                for(int j = 0; j < 4;j++)
+                {
+                    ShotLog temp = new ShotLog();
+                    temp.set_shotType(NAME_LIST[j]);
+                    temp.set_shotCount(0);
+                    db.updateShotLog(temp);
+                }
+
+                setupStatsView(rootView);
+                updateGraph();
+
+
+            }
+        });
+
+        //for NO event
+        alertDialog.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Toast.makeText(getActivity(), "You entered NO", Toast.LENGTH_SHORT).show();
+                dialogInterface.cancel();
+
+            }
+        });
+        alertDialog.show();
+    }
     private void setupStatsView(View V)
     {
         TextView wristCount = (TextView) V.findViewById(R.id.wrist_log_current);

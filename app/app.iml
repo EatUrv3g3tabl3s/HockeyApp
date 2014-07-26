@@ -69,8 +69,8 @@
     <orderEntry type="library" exported="" name="ActiveAndroid" level="project" />
     <orderEntry type="library" exported="" name="support-v4-19.1.0" level="project" />
     <orderEntry type="library" exported="" name="androidannotations-3.0.1" level="project" />
-    <orderEntry type="library" exported="" name="GraphView-3.1.1" level="project" />
     <orderEntry type="library" exported="" name="achartengine-1.1.0" level="project" />
+    <orderEntry type="library" exported="" name="GraphView-3.1.1" level="project" />
   </component>
 </module>
 
