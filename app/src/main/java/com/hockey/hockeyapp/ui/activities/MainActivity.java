@@ -19,6 +19,7 @@ import com.hockey.hockeyapp.R;
 import com.hockey.hockeyapp.ui.adapters.NavDrawerListAdapter;
 import com.hockey.hockeyapp.ui.fragments.BlankFragment;
 import com.hockey.hockeyapp.ui.fragments.ShotCounterFragment;
+import com.hockey.hockeyapp.ui.fragments.ShotTraining;
 import com.hockey.hockeyapp.ui.utils.NavDrawerItem;
 
 import java.util.ArrayList;
@@ -64,16 +65,16 @@ public class MainActivity extends FragmentActivity {
         // adding nav drawer items to array
         // Home
         navDrawerItems.add(new NavDrawerItem(navMenuTitles[0], navMenuIcons.getResourceId(0, -1)));
-        // Find People
+        // Shots
         navDrawerItems.add(new NavDrawerItem(navMenuTitles[1], navMenuIcons.getResourceId(1, -1)));
-        // Photos
+        // Tips
         navDrawerItems.add(new NavDrawerItem(navMenuTitles[2], navMenuIcons.getResourceId(2, -1)));
-        // Communities, Will add a counter here
-        navDrawerItems.add(new NavDrawerItem(navMenuTitles[3], navMenuIcons.getResourceId(3, -1), true, "22"));
+        // Shot Training
+        navDrawerItems.add(new NavDrawerItem(navMenuTitles[3], navMenuIcons.getResourceId(3, -1)));
         // Pages
         navDrawerItems.add(new NavDrawerItem(navMenuTitles[4], navMenuIcons.getResourceId(4, -1)));
         // What's hot, We  will add a counter here
-        navDrawerItems.add(new NavDrawerItem(navMenuTitles[5], navMenuIcons.getResourceId(5, -1), true, "50+"));
+        navDrawerItems.add(new NavDrawerItem(navMenuTitles[5], navMenuIcons.getResourceId(5, -1)));
 
 
         // Recycle the typed array
@@ -168,21 +169,27 @@ public class MainActivity extends FragmentActivity {
         Fragment fragment = null;
         switch (position) {
             case 0:
+                //HOME
                 fragment = new BlankFragment();
                 break;
             case 1:
+                //SHOTS
                 fragment = new ShotCounterFragment();
                 break;
             case 2:
+                //TIPS
                 fragment = new ShotCounterFragment();
                 break;
             case 3:
-                fragment = new BlankFragment();
+                //SHOT TRAINING
+                fragment = new ShotTraining();
                 break;
             case 4:
+                //
                 fragment = new BlankFragment();
                 break;
             case 5:
+                //
                 fragment = new ShotCounterFragment();
                 break;
 

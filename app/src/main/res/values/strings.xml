@@ -7,7 +7,7 @@
         <item>Home</item>
         <item>Shots</item>
         <item>Tips</item>
-        <item>Communities</item>
+        <item>Shot Training</item>
         <item>Pages</item>
         <item>What\'s Hot</item>
     </string-array>
@@ -28,7 +28,8 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_main">HockeyApp</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-
+    <string name="tab_title1">Buzzer Beater</string>
+    <string name="tab_title2">Quick Release</string>
 
     <string-array name="shotType">
         <item>Wrist</item>

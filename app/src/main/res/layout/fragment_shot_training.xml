@@ -1,0 +1,55 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/red"
+    tools:context=".ui.fragments.ShotTraining">
+
+    
+
+    <RelativeLayout
+        android:layout_width="332dp"
+        android:layout_height="445dp"
+        android:layout_gravity="center">
+
+        <TabHost
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@android:id/tabhost"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#EFEFEF">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <TabWidget
+                    android:id="@android:id/tabs"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" />
+
+                <FrameLayout
+                    android:id="@android:id/tabcontent"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <FrameLayout
+                        android:id="@+id/tab1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:background="#FFFF00" />
+
+                    <FrameLayout
+                        android:id="@+id/tab2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:background="#FF00FF" />
+
+                </FrameLayout>
+            </LinearLayout>
+        </TabHost>
+
+
+    </RelativeLayout>
+</FrameLayout>
