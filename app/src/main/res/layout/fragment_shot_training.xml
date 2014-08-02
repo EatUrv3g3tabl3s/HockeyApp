@@ -5,7 +5,6 @@
     android:background="@color/red"
     tools:context=".ui.fragments.ShotTraining">
 
-    
 
     <RelativeLayout
         android:layout_width="332dp"
