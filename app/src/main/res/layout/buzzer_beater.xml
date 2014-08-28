@@ -8,25 +8,58 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/btnStart"
-        android:layout_alignParentLeft="true"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="28dp"
-        android:text="Start"/>
+        android:text="Start"
+        android:layout_below="@+id/textViewTime"
+        android:layout_alignRight="@+id/textViewBox"
+        android:layout_alignEnd="@+id/textViewBox"
+        android:layout_marginTop="88dp" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/btnStop"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:layout_marginRight="67dp"
-        android:text="Stop"/>
+        android:text="Stop"
+        android:layout_toEndOf="@+id/textViewSeconds"
+        android:layout_alignTop="@+id/btnStart"
+        android:layout_toRightOf="@+id/textViewSeconds" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/textViewBox"
+        android:textSize="25sp"
+        android:text="       "
+        android:editable="false"
+        android:inputType="number"
+        android:layout_marginTop="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="100dp"
+        android:background="@drawable/square_back"/>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/textViewTime"
-        android:layout_above="@+id/btnStop"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="17dp"
-        android:textSize="25sp"/>
+        android:layout_marginTop="59dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="108dp"
+        android:maxLength="2"
+        android:textSize="25sp"
+        android:text="99"
+        android:inputType="number"
+        android:background="@null"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Seconds"
+        android:textSize="25sp"
+        android:id="@+id/textViewSeconds"
+        android:layout_marginLeft="30dp"
+        android:layout_alignTop="@+id/textViewBox"
+        android:layout_toRightOf="@+id/textViewBox"
+        android:layout_toEndOf="@+id/textViewBox" />
 
 </RelativeLayout>
